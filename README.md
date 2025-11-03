@@ -13,7 +13,7 @@
 ## Быстрый старт
 
 ```bash
-git clone git@github.com:Frostmourneee/Pet-MLOps.git
+git clone git@github.com:Frostmourneee/MLOps.git
 
 # Создаем .env файл с настройками (автоматически)
 make env
@@ -21,6 +21,8 @@ make env
 # Запускаем всю инфраструктуру
 make up
 ```
+На 127.0.0.1:8080/docs можно протестировать в SwaggerUI работу ручки /predict
+На 127.0.0.1:8081 работает AirFlow WebUI
 
 ## Схема взаимодействия сервисов
 ```text
