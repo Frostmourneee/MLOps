@@ -11,6 +11,7 @@
 - **Scikit-learn** - ML модели (Random Forest, XGBoost, Logistic Regression)
 
 ## Быстрый старт
+Для работы необходим установленный Docker.
 
 ```bash
 git clone git@github.com:Frostmourneee/MLOps.git
