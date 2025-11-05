@@ -14,9 +14,9 @@
 Для работы необходим установленный Docker.
 
 ```bash
-git clone git@github.com:Frostmourneee/MLOps.git
+git clone <repository-url>
 
-# Создаем .env файл с настройками (автоматически)
+# Создаем .env файл с настройками
 make env
 
 # Запускаем всю инфраструктуру
