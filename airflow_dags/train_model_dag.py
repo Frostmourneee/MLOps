@@ -1,7 +1,6 @@
 from datetime import datetime
 
-from airflow import DAG
-from airflow.operators.python import PythonOperator
+from airflow.sdk import dag, task
 
 from ml_core.train import train_models
 
@@ -10,7 +9,8 @@ default_args = {
     "retries": 1,
 }
 
-with DAG(
+
+@dag(
     dag_id="train_models_dag",
     default_args=default_args,
     description="Автоматический DAG для обучения ML моделей",
@@ -19,9 +19,13 @@ with DAG(
     tags=["ml", "training"],
     schedule="@once",
     is_paused_upon_creation=False,
-) as dag:
+)
+def train_models_dag():
+    @task
+    def train_models_task():
+        return train_models()
 
-    train_task = PythonOperator(
-        task_id="train_models_task",
-        python_callable=train_models,
-    )
+    train_models_task()
+
+
+train_models_dag()
